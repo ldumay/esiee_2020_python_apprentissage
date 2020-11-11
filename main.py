@@ -5,7 +5,7 @@ from math import *
 #    print(f'Hi, {name}')
 
 def exercice1():
-    print('Exercice 1 - Demande de saisi de chaîne de caractère et affichage de ces chaînes.')
+    print('Exercice 1 - Demande de saisi de chaine de caractère et affichage de ces chaine.')
     nom = input('- Entrer votre nom : ')
     prenom = input('- Entrer votre prenom : ')
     print('Bonjour '+nom+' '+prenom+'!')
@@ -124,7 +124,7 @@ def exercice13():
 
 def exercice14():
     # Carré parfait : un nombre entier est divisible par lui même et par 1
-    print('Exercice 14 - Saisir un nombre entier n et si ce nombre est un carré parfait ou non')
+    print('Exercice 14 - Saisir un nombre entier n et déterminer si ce nombre est un carré parfait ou non')
     n = int(input('- Saisir un nombre entier n : '))
 
     #--Derminer les diviseur d'un nombre |PARTIE ENCORE EN DEV|
@@ -157,13 +157,73 @@ def exercice15():
     i = 2
     while i < n and n % i != 0:
          i += 1
-    print(i)
+    #print(i)
     if i == n:
         print('Le nombre n:'+str(n)+' est un nombre premier')
     else:
         print('Le nombre n:' + str(n) + ' n\'est pas un nombre premier')
 
+def exercice16():
+    print('Exercice 16 - Saisir une chaine de caractère s et afficher les caractère d\'un variable de typpe chaine de cractères')
+    s = input("- Saisir chaine de cractère : ")
+    for caractereInS in s:
+        print(caractereInS)
+    print('Voici ci-dessus tous les caratères composant votre chaine de caractère s:' + str(s) + '.')
+
+def exercice17():
+    print('Exercice 17 - Saisir une chaine de cractère s et afficher le nombre d’occurrences de chaque caractère dans la chaine')
+    s = 'itescia.fr'
+    # --
+    listeCaracteres = []
+    for caractereInS in s:
+        caractereExistant = 0
+        #vérification du caractère dans la liste si existant
+        for caractereInlisteCaracteres in listeCaracteres:
+            if caractereInlisteCaracteres == caractereInS:
+                caractereExistant = 1
+                #print(caractereInlisteCaracteres+'-'+caractereInS)
+        #print(str(caracterInS)+'-'+str(caractereExistant))
+        if caractereExistant == 0:
+            listeCaracteres.append(caractereInS)
+    print(listeCaracteres)
+    # --
+    longueurDeLaListeCaracteres = len(listeCaracteres)
+    x = 0
+    while x < longueurDeLaListeCaracteres:
+        #vérification des occurences d'un caractère par rapport à la chaine de caractère saisi et affichage
+        totalOccurencesCaracteres = str(s.count(listeCaracteres[x]))
+        print('Le caractère : ” '+str(listeCaracteres[x])+' ” figure '+str(totalOccurencesCaracteres)+' fois.')
+        x += 1
+    print('Voici ci-dessus tous les occurences d\'un caractère composant votre chaine de caractère s:' + str(s) + '.')
+
+def exercice18():
+    print('Exercice 18 - Saisir une chaine de caractère "s" pour vérifier \'existance d\'un caractère "a" dans celle-ci, ainsi que sa possition si existant')
+    s = input("- Saisir chaine de caractère : ")
+    listeCaracteres = []
+    caractereRechercher = 'a'
+    caractereExistant = 0
+    postionCaractereInS = []
+    totalOccurencesCaractereRechercher = 0
+    # Transformation de la chaine de caractère en liste
+    for caractereInS in s:
+        listeCaracteres.append(caractereInS)
+    #print(listeCaracteres)
+    # vérification du cractère dans la liste si existant
+    for index, value in enumerate(listeCaracteres):
+        #print(index, value)
+        if caractereRechercher == value:
+            caractereExistant = 1
+            totalOccurencesCaractereRechercher = listeCaracteres.count(str(caractereRechercher))
+            postionCaractereInS.append(index)
+    if caractereExistant == 1:
+        print('La lettre a apparait '+str(totalOccurencesCaractereRechercher)+' fois et se trouve à la postition '+str(postionCaractereInS)+'.')
+    else:
+        print('La lettre a n\'éxiste pas dans la chaine de caractère saisi.')
+    # Fonctionnel aussi avec une phrase tel que : L'avion apparaitra dans les airs et il sera blanc.
+
 if __name__ == '__main__':
     # print_hi('PyCharm')
 
-    exercice15()
+    exercice18()
+
+# Git Version : v0.5
