@@ -221,9 +221,88 @@ def exercice18():
         print('La lettre a n\'éxiste pas dans la chaine de caractère saisi.')
     # Fonctionnel aussi avec une phrase tel que : L'avion apparaitra dans les airs et il sera blanc.
 
+def exercice19():
+    print('Exercice 19 - Lister les chaines qui composent la liste l = [“laptop”, “iphone”, “tablet”] et indiquer la longueur de chaque chaine')
+    l = ['laptop', 'iphone', 'tablet']
+    #Découpage de chaque chaines de caractère dans la liste pour les lister
+    x = 0
+    toutesListes = []
+    while x < len(l):
+        listeTmp = []
+        for liste in l[x]:
+            listeTmp.append(liste)
+            #print(liste)
+        toutesListes.extend([listeTmp])
+        print('La chaine '+str(l[x])+' à une longueur de '+str(len(l[x]))+' et se compose de '+str(toutesListes[x])+'.')
+        x += 1
+    #print(toutesListes)
+
+def exercice20():
+    print('Exercice 20 - Saisir une chaine de caractère pour remplacer le premier caractètre d\'une chaine par le dernier')
+    s = input("- Saisir chaine de caractère : ")
+    listeDesCaracteresInS = []
+    for caracteresInS in s:
+        listeDesCaracteresInS.append(caracteresInS)
+    print('Chaine avant inversion : '+str(s))
+    #Récupération de la position du dernier caractère
+    positionDernierCaractereInS = len(s)-1
+    #Récupération du premier et dernier caractère dans la chaine saisi
+    premierCaractereInS = listeDesCaracteresInS[0]
+    dernierCaractereInS = listeDesCaracteresInS[positionDernierCaractereInS]
+    #Inversion des caractères entre le permier et dernier
+    newPremierCaractereInS = dernierCaractereInS
+    newDernierCaractereInS = premierCaractereInS
+    #Remplacemement des anciens caractères dans la chaine par les nouveaux
+    listeDesCaracteresInS[0] = newPremierCaractereInS
+    listeDesCaracteresInS[positionDernierCaractereInS] = newDernierCaractereInS
+    newS = ''
+    for generationNewS in listeDesCaracteresInS:
+        newS += str(generationNewS)
+    #--
+    print('Chaine après inversion : '+str(newS)+'.')
+
+    #--CODE-EXERCICE-20-A-SIMPLIFIER--#
+
+def exercice21():
+    print('Exercice 21 - Compter le nombre de voyelle dans la chain de caractère s=‘anticonstitutionellement’')
+    s = 'anticonstitutionellement'
+    voyelles = ['a','e','i','o','u','y']
+    ttlVoyelles = 0
+    #Lecture des caractères de la chaine
+    for caractersInS in s:
+        rechercheVoyelle = caractersInS
+        #Comparaison avec la liste des voyelles
+        for compareVoyelle in voyelles:
+            if compareVoyelle == rechercheVoyelle:
+                ttlVoyelles += 1
+    print('La chaine '+str(s)+' possède '+str(ttlVoyelles)+' voyelles.')
+
+def exercice22():
+    print('Exercice 22 - Afficher le permier d\'un text tel que : t = Python est un merveilleux langage de programmation')
+    t ='Python est un merveilleux langage de programmation'
+    decoupeText = t.split(' ')
+    print('Le premier de la chaine est '+str(decoupeText[0])+'.')
+
+def exercice23():
+    print('Exercice 23 - Afficher l\'extension d\'un fichier')
+    s = input("- Saisir un fichier son extension : ")
+    decoupeText = s.split('.')
+    print('L\'extension du fichier est ' + str(decoupeText[1]) + '.')
+
+def exercice24():
+    #Un palindrome est un mot dont l’ordre des lettres reste le même si on le lit de gauche à droite ou de droite à gauche.
+    #Par exemple : ‘laval’ , ‘radar, ‘sos’… sont des palindromes.
+    print('Exercice 24 - Saisi d\'un mot et vérification si s\'est un palindrome')
+    s = input("- Saisir un mot : ")
+    listeCaracteresInS = []
+    for caractereInS in s:
+        listeCaracteresInS.append(caractereInS)
+    print(listeCaracteresInS)
+    ##--NON-FINIT--##
+
 if __name__ == '__main__':
     # print_hi('PyCharm')
 
-    exercice18()
+    exercice24()
 
 # Git Version : v0.5
