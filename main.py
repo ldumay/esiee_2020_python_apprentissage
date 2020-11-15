@@ -364,7 +364,7 @@ def exercice26():
     print('Exercice 26 - Saisir un text et afficher tous les mots commençant pas la lettre a.')
     s = input("- Saisir d'un texte : ")
 
-    #texte de test simple : mon vélo est rouge et bleu
+    #texte de test simple : mon avion est bleu avec des ails rouge
 
     #separation des mots du texte saisi
     totalMotsInS = 0
@@ -383,7 +383,7 @@ def exercice26():
         for mots in listeMots[x]:
             motSelected.append(mots)
         if motSelected[0] == 'a':
-            print('Le mot '+str(x)+':'+str(listeMots[x])+' commence par un a.')
+            print('Le mot '+str(x)+':'+str(listeMots[x])+' commence par la lettre a.')
         x += 1
 
     #--
