@@ -1,8 +1,16 @@
+import sys
 from statistics import *
 from math import *
 
-#def print_hi(name):
-#    print(f'Hi, {name}')
+def print_hi(name):
+    print(f'Hi, {name}')
+
+def pythonVersion():
+    if not sys.version_info.major == 3 and sys.version_info.minor >= 6:
+        print("Python 3.6 or higher is required.")
+    else:
+        print("You are using Python {}.{}.".format(sys.version_info.major, sys.version_info.minor))
+    #sys.exit(1)
 
 def exercice1():
     print('Exercice 1 - Demande de saisi de chaine de caractère et affichage de ces chaine.')
@@ -209,7 +217,7 @@ def exercice18():
         listeCaracteres.append(caractereInS)
     #print(listeCaracteres)
     # vérification du cractère dans la liste si existant
-    for index, value in enumerate(listeCaracteres):
+    for index, value in enumerate(listeCaracteres): #Récupère la position et la valeur d'un liste
         #print(index, value)
         if caractereRechercher == value:
             caractereExistant = 1
@@ -294,15 +302,98 @@ def exercice24():
     #Par exemple : ‘laval’ , ‘radar, ‘sos’… sont des palindromes.
     print('Exercice 24 - Saisi d\'un mot et vérification si s\'est un palindrome')
     s = input("- Saisir un mot : ")
+    # --
     listeCaracteresInS = []
-    for caractereInS in s:
-        listeCaracteresInS.append(caractereInS)
-    print(listeCaracteresInS)
-    ##--NON-FINIT--##
+    nombreTotalDeCaractereInS = 0
+    for index, value in enumerate(s):  # Récupère la position et la valeur d'un liste
+        #print(str(index) + "," + str(value))
+        listeCaracteresInS.extend([[index, value]])
+        nombreTotalDeCaractereInS += 1
+    #--
+    demiDuNombreTotalDeCaractereInS = int(nombreTotalDeCaractereInS / 2)
+    #print('liste : ' + str(listeCaracteresInS))
+    #print('total : ' + str(nombreTotalDeCaractereInS))
+    #print('moitié total : '+str(demiDuNombreTotalDeCaractereInS))
+    #--
+    premierCaractere = 0
+    dernierCaractere = nombreTotalDeCaractereInS-1
+    #Vérification des caractères similaires
+    similariees = 0
+    while premierCaractere < float(demiDuNombreTotalDeCaractereInS+0.5):
+        if listeCaracteresInS[premierCaractere][1] == listeCaracteresInS[dernierCaractere][1]:
+        #    print('1er : ' + str(listeCaracteresInS[premierCaractere][1]) + ' et dernier : ' + str(listeCaracteresInS[dernierCaractere][1])+' - ok')
+            similariees += 1
+        #else:
+        #    print('1er : ' + str(listeCaracteresInS[premierCaractere][1]) + ' et dernier : ' + str(listeCaracteresInS[dernierCaractere][1])+' - no')
+        premierCaractere += 1
+        dernierCaractere -= 1
+    # Vérification des similaritées trouvées
+    if similariees == demiDuNombreTotalDeCaractereInS+1:
+        print('Le mot saisi est un palindrome.')
+    else:
+        print('Le mot saisi n\'est pas un palindrome.')
+
+def exercice25():
+    print('Exercice 25 - Saisir un mot et afficher son inverse.')
+    s = input("- Saisir un mot : ")
+    # Récupération des caractères de la chaine saisi
+    listeCaracteresInS = []
+    nombreTotalDeCaractereInS = 0
+    for index, value in enumerate(s):  # Récupère la position et la valeur d'un liste
+        listeCaracteresInS.extend([[index, value]])
+        nombreTotalDeCaractereInS += 1
+    #print(listeCaracteresInS)
+    #Retounrnement des caractères de la chaine saisi
+    inverseListeCaractereInS = []
+    x = 0
+    while nombreTotalDeCaractereInS > 0:
+        #print(listeCaracteresInS[nombreTotalDeCaractereInS-1][0])
+        inverseListeCaractereInS.extend([[ x , str(listeCaracteresInS[nombreTotalDeCaractereInS-1][1]) ]])
+        nombreTotalDeCaractereInS -= 1
+        x += 1
+    #print(inverseListeCaractereInS)
+    # Constructione de la chaine inverse
+    y = 0
+    inverseDuMotS = ''
+    for inverse in inverseListeCaractereInS:
+        inverseDuMotS = inverseDuMotS+inverse[1]
+        y += 1
+    print('L\'inverse du mot '+s+' est '+inverseDuMotS)
+
+def exercice26():
+    print('Exercice 26 - Saisir un text et afficher tous les mots commençant pas la lettre a.')
+    s = input("- Saisir d'un texte : ")
+
+    #texte de test simple : mon vélo est rouge et bleu
+
+    #separation des mots du texte saisi
+    totalMotsInS = 0
+    listeMots = s.split(' ')
+    #print(listeMots)
+
+    #comptage des mots récupérer
+    for mots in listeMots:
+        totalMotsInS += 1
+    #print(totalMotsInS)
+
+    #Affichage de mots commençant par a
+    x = 0
+    while x < totalMotsInS:
+        motSelected = []
+        for mots in listeMots[x]:
+            motSelected.append(mots)
+        if motSelected[0] == 'a':
+            print('Le mot '+str(x)+':'+str(listeMots[x])+' commence par un a.')
+        x += 1
+
+    #--
+    #caracteresDeSeprartionComplexe = ['(', ')', '_', '-', ':', ';', '.', '\'', ' ']
+    #texte de test complexe : j'ai_un-vélo;rouge.et:bleu(si,un avion\vole)
 
 if __name__ == '__main__':
-    # print_hi('PyCharm')
+    #print_hi('PyCharm')
+    #pythonVersion()
 
-    exercice24()
+    exercice26()
 
 # Git Version : v0.5
