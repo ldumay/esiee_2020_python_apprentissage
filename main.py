@@ -181,7 +181,7 @@ def exercice16():
 def exercice17():
     print('Exercice 17 - Saisir une chaine de cractère s et afficher le nombre d’occurrences de chaque caractère dans la chaine')
     s = 'itescia.fr'
-    # --
+    #Création de la liste des caractères
     listeCaracteres = []
     for caractereInS in s:
         caractereExistant = 0
@@ -194,11 +194,10 @@ def exercice17():
         if caractereExistant == 0:
             listeCaracteres.append(caractereInS)
     print(listeCaracteres)
-    # --
+    #vérification des occurences d'un caractère par rapport à la chaine de caractère saisi et affichage
     longueurDeLaListeCaracteres = len(listeCaracteres)
     x = 0
     while x < longueurDeLaListeCaracteres:
-        #vérification des occurences d'un caractère par rapport à la chaine de caractère saisi et affichage
         totalOccurencesCaracteres = str(s.count(listeCaracteres[x]))
         print('Le caractère : ” '+str(listeCaracteres[x])+' ” figure '+str(totalOccurencesCaracteres)+' fois.')
         x += 1
@@ -268,7 +267,6 @@ def exercice20():
         newS += str(generationNewS)
     #--
     print('Chaine après inversion : '+str(newS)+'.')
-
     #--CODE-EXERCICE-20-A-SIMPLIFIER--#
 
 def exercice21():
@@ -338,10 +336,9 @@ def exercice25():
     s = input("- Saisir un mot : ")
     # Récupération des caractères de la chaine saisi
     listeCaracteresInS = []
-    nombreTotalDeCaractereInS = 0
+    nombreTotalDeCaractereInS = len(s)
     for index, value in enumerate(s):  # Récupère la position et la valeur d'un liste
         listeCaracteresInS.extend([[index, value]])
-        nombreTotalDeCaractereInS += 1
     #print(listeCaracteresInS)
     #Retounrnement des caractères de la chaine saisi
     inverseListeCaractereInS = []
@@ -362,20 +359,16 @@ def exercice25():
 
 def exercice26():
     print('Exercice 26 - Saisir un text et afficher tous les mots commençant pas la lettre a.')
+    # texte de test simple : mon avion est bleu avec des ails rouge
     s = input("- Saisir d'un texte : ")
-
-    #texte de test simple : mon avion est bleu avec des ails rouge
-
     #separation des mots du texte saisi
-    totalMotsInS = 0
     listeMots = s.split(' ')
-    #print(listeMots)
-
+    print(listeMots)
     #comptage des mots récupérer
+    totalMotsInS = 0
     for mots in listeMots:
         totalMotsInS += 1
-    #print(totalMotsInS)
-
+    print(totalMotsInS)
     #Affichage de mots commençant par a
     x = 0
     while x < totalMotsInS:
@@ -385,15 +378,33 @@ def exercice26():
         if motSelected[0] == 'a':
             print('Le mot '+str(x)+':'+str(listeMots[x])+' commence par la lettre a.')
         x += 1
-
     #--
     #caracteresDeSeprartionComplexe = ['(', ')', '_', '-', ':', ';', '.', '\'', ' ']
     #texte de test complexe : j'ai_un-vélo;rouge.et:bleu(si,un avion\vole)
+
+def exercice27():
+    print('Exercice 27 - Chercher le mot le plus long sur une chaine s.')
+    s = input("- Saisir d'un texte : ")
+    # separation des mots du texte saisi
+    listeMots = s.split(' ')
+    #print(listeMots)
+    # Affichage du mot le plus long
+    for mots in listeMots:
+        print('Le mot '+str(mots)+' a une longueur de '+str(len(mots))+'.')
+
+def exercice28():
+    print('Exercice 28 - Tester si une liste ou une chaine de caractère est vide ou non.')
+    s = input("- Saisir une liste ou chaine de caractère : ")
+    if s is not None and s != '':
+        print('La liste ou la chaine de caractère saisi n\'est pas vide et contient :\n--> '+str(s))
+    else:
+        print('La liste ou la chaine de caractère saisi est vide.')
+
 
 if __name__ == '__main__':
     #print_hi('PyCharm')
     #pythonVersion()
 
-    exercice26()
+    exercice28()
 
-# Git Version : v0.5
+    # Git Version : v0.8
