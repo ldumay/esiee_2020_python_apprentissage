@@ -5,7 +5,7 @@ from sceance2_Exo2_Générateur import *
 from tuto_fonctions_parametres_variable import *
 from ldumay_dictionnaires import *
 
-# Git Version : v0.8.1
+# Git Version : v0.8.2
 if __name__ == '__main__':
     #print_hi('PyCharm')
     #pythonVersion()
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     #---> Généteur
     nGenerator = 2
     chaine = dictionnaireVoyelles()
-    generateur(nGenerator,chaine)#1 - nGenerator (peut être null) / 2 - chaine (peut être null)
+    generateur(nGenerator,chaine)#1 - nGenerator (peut être null) / 2 - chaine (peut être null) [A FAIRE]
 
 
     #----Tutos----
