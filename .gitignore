@@ -1,0 +1,5 @@
+# - - - [ Git Ignore ] - - - 
+# This ".gitignore" file has been created and configured to ignore all files not dependent on project development.
+
+# The exclusions below exclude all PyCharm Cache files from the project.
+/__pycache__/*
