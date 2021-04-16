@@ -2,6 +2,7 @@ from defaultPython import *
 from sceance1 import *
 from sceance2_Exo1_ChiffrePorteBonheur import *
 from sceance2_Exo2_Générateur import *
+from sceance3_Listes import *
 from tuto_fonctions_parametres_variable import *
 from ldumay_dictionnaires import *
 
@@ -23,9 +24,9 @@ if __name__ == '__main__':
     #chiffrePorteBonheur(44)
 
     #---> Généteur
-    nGenerator = 2
-    chaine = dictionnaireVoyelles()
-    generateur(nGenerator,chaine)#1 - nGenerator (peut être null) / 2 - chaine (peut être null) [A FAIRE]
+    #nGenerator = 2
+    #chaine = dictionnaireVoyelles()
+    #generateur(nGenerator,chaine)#1 - nGenerator (peut être null) / 2 - chaine (peut être null) [A FAIRE]
 
 
     #----Tutos----
@@ -36,3 +37,8 @@ if __name__ == '__main__':
     #---> Générateurs
     #demoGenerateurStart()
     #demoCountdownStart()
+
+
+    #----[Listes]----
+    rechercheDansListeNonTrie()
+    rechercheDansListeTrie()
