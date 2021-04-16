@@ -3,6 +3,7 @@ from sceance1 import *
 from sceance2_Exo1_ChiffrePorteBonheur import *
 from sceance2_Exo2_Générateur import *
 from sceance3_Listes import *
+from sceance4_Recursivite import *
 from tuto_fonctions_parametres_variable import *
 from ldumay_dictionnaires import *
 
@@ -40,5 +41,9 @@ if __name__ == '__main__':
 
 
     #----[Listes]----
-    rechercheDansListeNonTrie()
-    rechercheDansListeTrie()
+    #rechercheDansListeNonTrie()
+    #rechercheDansListeTrie()
+
+
+    #----[Suites Récursivités]----
+    recursivite()
