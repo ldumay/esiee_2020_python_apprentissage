@@ -1,56 +1,37 @@
-# import Java a convertir en python
+# Algorithmie Quadratique Simple Tableau
+def exempleAlgoQuadratiqueSimple():
+    tab = [0, 1, 2, 3, 4, 5]
+    n=5
+    e=0
+    for i in range(0,n):
+        if tab[i] == e:
+            print("OK - i = "+str(i)+" - tab = "+str(tab[i]))
+        else:
+            print("NO - i = "+str(i))
+            e+=1
 
-/ *
-int[]
-tab = {0, 1, 2, 3, 4, 5};
-int
-n = 5;
-int
-e = 0;
-for (int i=0;i < n;i++){
-if (tab[i] == e){
-System.out.println("OK - i = "+i+" - tab = "+tab[i]);
-} else {
-System.out.println("NO - i = "+i);
-}
-e++;
-}
-* /
+# Algorithmie Linéaire Double Tableau
+def exempleAlgoLineaireDouble_ModelA():
+    tab = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    i=1
+    e=0
+    while i < len(tab)-1 :
+        while e < (i-1) :
+            print("e = "+str(e)+" - i = "+str(i)+" - tabe/i = "+str(tab[i])+" - tab/e = "+str(tab[e]))
+            if tab[i] == tab[e]:
+                print("OK - i = "+str(i)+" - tab dans i = "+str(tab[i])+" - tab dans e = "+str(tab[e]))
+            else :
+                print("NO - i = null")
+            e+=1
+        i+=1
 
-/ *
-int[]
-tab = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-int
-i = 1;
-int
-e = 0;
-
-while (i < tab.length - 1){
-while (e < i - 1){
-System.out.println("e = "+e+" - i = "+i+" - tabe/i = "+tab[i]+" - tab/e = "+tab[e]);
-if (tab[i] == tab[e]){
-System.out.println("OK - i = "+i+" - tab dans i = "+tab[i]+" - tab dans e = "+tab[e]);
-} else {
-System.out.println("NO - i = null");
-}
-e++;
-}
-i + +;
-}
-* /
-
-/ *
-int[]
-tab1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-int[]
-tab2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-int
-i = 0;
-while (i < tab1.length - 1 & & i < tab2.length - 1){
-if (tab1[i] == i & & tab2[i] == i){
-System.out.println("OK - i = "+i+" - tab1 = "+tab1[i]+" - tab2 = "+tab2[i]);
-} else {
-System.out.println("NO - i = "+i);
-}
-i++;
-} * /
+def exempleAlgoLineaireDouble_ModelB():
+    tab1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    tab2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    i=0
+    while i<(len(tab1)-1) and i<(len(tab2)-1):
+        if tab1[i]==i and tab2[i]==i:
+            print("OK - i = "+str(i)+" - tab1 = "+str(tab1[i])+" - tab2 = "+str(tab2[i]))
+        else:
+            print("NO - i = "+str(i))
+        i+=1

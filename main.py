@@ -2,6 +2,7 @@ from defaultPython import *
 from sceance1 import *
 from sceance2_Exo1_ChiffrePorteBonheur import *
 from sceance2_Exo2_Générateur import *
+from sceance3_1_Algo_Opti import *
 from sceance4_1_Listes import *
 from sceance4_2_Recursivite import *
 from sceance4_3_dichotomie import *
@@ -40,6 +41,11 @@ if __name__ == '__main__':
     #demoGenerateurStart()
     #demoCountdownStart()
 
+    #----[Algo Optimisation]-----
+    exempleAlgoQuadratiqueSimple()
+    exempleAlgoLineaireDouble_ModelA()
+    exempleAlgoLineaireDouble_ModelB()
+
 
     #----[Listes]----
     #rechercheDansListeNonTrie()
@@ -51,4 +57,4 @@ if __name__ == '__main__':
 
 
     #----[La recherche dichotomique]----
-    demoRechercheDichotomique() ## --> NON FINIT
+    #demoRechercheDichotomique() ## --> NON FINIT
