@@ -1,6 +1,6 @@
 # 2020-Python-Apprentissage
 
-> 🚨 **Projet déplacer ici ▶▶ : [https://github.com/2023-esiee-projectlab/esiee-it_2020_python_apprentissage](https://github.com/2023-esiee-projectlab/esiee-it_2020_python_apprentissage)**
+> 🚨 **Projet déplacer ici ▶▶ : [https://github.com/2023-esiee-projectlab/L3_python_apprentissage](https://github.com/2023-esiee-projectlab/L3_python_apprentissage)**
 
 Code simple pour apprendre les bases de python.
 La liste des exercices est [ici](http://univcergy.phpnet.org/python/).
